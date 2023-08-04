@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Meal App{% endblock %}</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Meal App</a>
+    </nav>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      {% for meal in meals %}
+      <div class="col">
+        <div class="card h-100">
+          <img
+            src="{{ meal.strMealThumb }}"
+            class="card-img-top"
+            alt="Meal Image"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{ meal.strMeal }}</h5>
+            <p class="card-text">
+              This is a longer card with supporting text below as a natural
+              lead-in to additional content. This content is a little bit
+              longer.
+            </p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>
